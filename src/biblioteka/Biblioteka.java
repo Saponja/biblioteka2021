@@ -50,8 +50,6 @@ public class Biblioteka implements IBiblioteka {
 		
 		LinkedList<Knjiga> rezultat = new LinkedList<Knjiga>();
 		
-		//nepotreban komentar 2
-		
 		for (Knjiga knjiga : knjige) {
 			if(knjiga.getNaslov().contains(naslov)) {
 				rezultat.add(knjiga);	
