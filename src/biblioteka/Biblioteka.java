@@ -2,6 +2,8 @@ package biblioteka;
 
 import java.util.LinkedList;
 
+import javax.management.RuntimeErrorException;
+
 import biblioteka.interfejs.IBiblioteka;
 
 public class Biblioteka implements IBiblioteka {
@@ -18,14 +20,18 @@ public class Biblioteka implements IBiblioteka {
 		if(knjige.contains(knjiga)) {
 			throw new RuntimeException("Knjiga vec postoji u listi");
 		}
-		
+
 		knjige.add(knjiga);
 
 	}
 
 	@Override
 	public void obrisiKnjigu(Knjiga knjiga) {
-		
+
+		if(knjiga == null || !knjige.contains(knjiga)) {
+			throw new RuntimeException("Kniga ne sme biti null i mora posotojati u biblioteci");
+		}
+
 		knjige.remove(knjiga);
 
 	}
@@ -39,7 +45,7 @@ public class Biblioteka implements IBiblioteka {
 	public LinkedList<Knjiga> pronadjiKnjigu(Autor autor, String isbn, String naslov, String izdavaz) {
 		
 		if(autor == null && isbn == null && naslov == null && izdavaz == null) {
-			return knjige;
+			throw new RuntimeException("Morate uneti bar jedan kriterijum pretrage");
 		}
 		
 		LinkedList<Knjiga> rezultat = new LinkedList<Knjiga>();
