@@ -44,10 +44,13 @@ public class Biblioteka implements IBiblioteka {
 	@Override
 	public LinkedList<Knjiga> pronadjiKnjigu(Autor autor, String isbn, String naslov, String izdavaz) {
 		
+		
+		
 		if(autor == null && isbn == null && naslov == null && izdavaz == null) {
 			throw new RuntimeException("Morate uneti bar jedan kriterijum pretrage");
 		}
 		
+		//reultat koji vraca metoda
 		LinkedList<Knjiga> rezultat = new LinkedList<Knjiga>();
 		
 		for (Knjiga knjiga : knjige) {
