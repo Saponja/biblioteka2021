@@ -2,6 +2,14 @@ package biblioteka;
 
 import java.util.LinkedList;
 
+
+/** 
+ * Klasa Biblioteka implementira interfejsa IBilioteka
+ * 
+ * @author Jovan Saponjic
+ * 
+ * */
+
 import javax.management.RuntimeErrorException;
 
 import biblioteka.interfejs.IBiblioteka;
